@@ -8,9 +8,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'authorization/sign-in',
     pathMatch: 'full'
   },
+  {
+    path: 'authorization',
+    loadChildren: () => import('./authorization/authorization.module').then( m => m.AuthorizationPageModule)
+  }
 ];
 
 @NgModule({
